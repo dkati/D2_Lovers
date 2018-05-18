@@ -10,4 +10,5 @@
 *.ide-shm
 .vs/D2_Lovers/v15/.suo
 
-*.exe
+/bin/*
+/obj/*
