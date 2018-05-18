@@ -1,0 +1,140 @@
+D2MultiRes v1.01 - Diablo II Multiple Resolution Patch
+For Diablo II v1.12a
+
+This unofficial "patch" allows you to play Diablo II in
+resolutions other than 640x480 and 800x600.  It is, for
+the most part, completed, but there are still a few
+issues that have not been worked out.  The "patch" lets
+you select any resolution 640x480 or higher that is
+supported by your current display adapter/monitor.  There
+are no other changes to the game other than this.
+
+The downloaded "patch" should consist of 4 files:
+
+D2MultiRes.txt
+D2MultiResGame.exe
+D2MultiRes.dll
+D2MultiRes.mpq
+
+To install, simply copy D2MultiResGame.exe, D2MultiRes.dll and
+D2MultiRes.mpq to your Diablo II directory.  You do not need
+to copy over or replace any of your files, and none of your
+files will be changed.  At the moment, D2MultiRes only supports
+the GDI (windowed mode) and DirectDraw graphics plugins.  If 
+you are using Glide you'll almost certainly crash.  If you're
+using Direct3D you'll be able to run Diablo II, but expect to
+see some funky graphic glitches while playing the game.  To
+switch to DirectDraw, run D2VidTst.exe (found in your Diablo II
+directory) and choose the DirectDraw option.  You shouldn't
+notice any major drawbacks for using DirectDraw over Direct3D,
+so for most users this probably won't be a problem.
+
+To run, start D2MultiResGame.exe.  You may use any of the
+normal command line options available when playing Diablo II, 
+such as "-w" for windowed or "-direct -txt" for mods.  Diablo II
+will start in its normal resolution, however when playing a game
+you will be able to switch to a new, higher resolution.  To do
+so, just go to the Video Options menu and select the Resolution
+menu item.  This will bring up a new panel that will list your
+available resolutions.  Click the one you wish to play in and
+Diablo II will switch to that resolution.
+
+Like I stated above, there are still a few oddities with
+D2MultiRes.  None of these is game breaking, and you probably
+won't really notice them all that much:
+
+	The Direct3D plugin is NOT working.  You WILL notice
+	this if you try to play with it.  I'm looking into
+	getting it working, but I'm also perfectly happy
+	using DirectDraw so...
+
+	The lighting for torches, monsters, etc. is a little
+	unusual looking at the edges of the screen.  I assume
+	this has to do with how lighting is rendered - it's
+	probably been optimized for the two original display
+	modes and so doesn't work entirely right on other
+	resolutions.  This is a minor inconvenience at best
+	and you'll probably stop noticing it after a bit.
+
+	At the edges of zones you'll see black borders instead
+	of more grass, desert, jungle, etc.  This is because 
+	Diablo II doesn't actually have anything to draw there.
+	The original resolutions weren't big enough to make those
+	areas visible and so nothing was put in to cover them.
+	Now that they are visible, there's nothing there and they
+	show as black.
+
+	Sometimes when using a waypoint or portal you may see
+	black areas that are filled in once you start to move.
+	As best as I can tell, this has to do with how Diablo II
+	populates what room you're in and what rooms are
+	surrounding your current room.  As soon as you head
+	towards any of the black area, the room is populated and
+	the issue is gone.  Unfortunately I have found any
+	way to correct this, but it's a minor issue.
+
+	Some of the interface isn't perfectly aligned, this is
+	mostly because I was lazy and didn't take the time to
+	align it.  I'm not talking about the primary interface
+	screens, though.  All of that aligns correctly.  I mean
+	things such as the "Imbue An Item" screen or when you're
+	placing The Staff of Kings in its spot to reach Duriel.
+	Instead of being aligned in the center of the left half,
+	they're usually at the top of the left half.  Not that
+	big of a deal.
+
+	The minimap might be a little funky if you have it at
+	the smaller size and on the left side of the screen.
+	I have no idea why.  Move it to the right side of the
+	screen with your V key and the problem is mostly solved.
+	You may still a few strange things with the minimap, mostly
+	drawing the location of a player/NPC outside of the minimap
+	bounds.  Not really a big issue, and something you'll
+	only notice around towns.
+
+Time permitting, I will make an attempt to fix some of these issues
+or improve the quality of D2MultiRes.
+
+----------------------------------------------------------------------
+Changes in v1.01
+----------------------------------------------------------------------
+
+Corrected an issue that was causing rooms to fill their object list
+and render multiple times.  This should great increase the frame rate
+all around and eliminate much of the slowdown at zone transitions.  I
+was able to maintain a smooth 25 FPS at all times with these changes.
+
+Corrected an issue that might cause regular Diablo II to crash when
+switching between using D2MultiRes and regular Diablo II.  The
+resolution you use while playing D2MultiRes will now be stored in
+a different registry key, preventing it from interferring with the
+normal Diablo II resolution registry key.  If you've already used
+D2MultiRes and their is an invalid value in your Diablo II resolution
+registry key, it will be defaulted back to 800x600 to prevent issues.
+
+----------------------------------------------------------------------
+Changes in v1.02
+----------------------------------------------------------------------
+
+Corrected the positioning of the Message Log window.  The background
+will no longer have its upper left corner starting in the middle of
+the screen, but instead should be located in the correct position.
+
+Added better support for Direct3D mode with perspective on.  There are
+still some issues, but a number of the existing issues have been
+corrected.  The framerate seems to be much slower in D3D (even with the
+perspective option off) so DirectDraw is still a better choice.
+
+Changed the drawing of ground tiles/objects to hopefully pick up a 
+larger area of rooms in larger resolutions and a smaller area in smaller
+resolutions.  I have noticed there still seems to be some dissappearing
+objects on the very edge of the screen in larger resolutions.
+
+Added logging, which will be stored as D2MultiResLog.txt in the current
+directory (generally your Diablo II directory).  This should provide 
+more information about errors if they come up.
+
+Changed a bit of code that was preventing the DLL for loading if it was
+unable to find the Diablo II standard resolution registry entry.  Instead
+it will now use a default of 800x600 (this only applies for setting the
+resolution to use the first time D2MultiRes is used on a machine).
