@@ -1,0 +1,9 @@
+C:\Users\admin\Desktop\github\D2_Lovers\D2_Lovers\bin\Debug\D2_Lovers.exe.config
+C:\Users\admin\Desktop\github\D2_Lovers\D2_Lovers\bin\Debug\D2_Lovers.exe
+C:\Users\admin\Desktop\github\D2_Lovers\D2_Lovers\bin\Debug\D2_Lovers.pdb
+C:\Users\admin\Desktop\github\D2_Lovers\D2_Lovers\obj\Debug\D2_Lovers.Form1.resources
+C:\Users\admin\Desktop\github\D2_Lovers\D2_Lovers\obj\Debug\D2_Lovers.Properties.Resources.resources
+C:\Users\admin\Desktop\github\D2_Lovers\D2_Lovers\obj\Debug\D2_Lovers.csproj.GenerateResource.cache
+C:\Users\admin\Desktop\github\D2_Lovers\D2_Lovers\obj\Debug\D2_Lovers.csproj.CoreCompileInputs.cache
+C:\Users\admin\Desktop\github\D2_Lovers\D2_Lovers\obj\Debug\D2_Lovers.exe
+C:\Users\admin\Desktop\github\D2_Lovers\D2_Lovers\obj\Debug\D2_Lovers.pdb

@@ -16,5 +16,16 @@ namespace D2_Lovers
         {
             InitializeComponent();
         }
-    }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void contactToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Contact us to : dkatikaridis@gmail.com \r\n or \r\n johnmenex@gmail.com");
+        }
+  }
 }
